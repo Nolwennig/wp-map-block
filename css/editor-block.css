@@ -1,0 +1,6 @@
+.map-block.is-empty {
+	border: 1px solid #ccc;
+	background-color: #f7f7f7;
+	line-height: 350px;
+	text-align: center;
+}
