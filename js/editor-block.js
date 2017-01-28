@@ -64,12 +64,18 @@
 			 * @param {Object[]} data Response from OpenStreetMap API
 			 */
 			onSuccess = function( data ) {
+				var bbox;
+
 				if ( ! data.length ) {
 					return onError();
 				}
 
+				// Transform boundingbox to expected query param value order
+				bbox = data[ 0 ].boundingbox;
+				bbox = [ bbox[ 2 ], bbox[ 0 ], bbox[ 3 ], bbox[ 1 ] ];
+
 				block.setAttributes( {
-					bbox: encodeURIComponent( data[ 0 ].boundingbox.join() ),
+					bbox: encodeURIComponent( bbox.join() ),
 					isLoading: false
 				} );
 			};
