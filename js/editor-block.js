@@ -94,7 +94,7 @@
 
 		return el( 'form', {
 			className: className,
-			onSubmit: onSubmit
+			onsubmit: onSubmit
 		}, [
 			MapBlockDisplay( attributes ),
 			el( 'input', {
