@@ -81,7 +81,7 @@
 			};
 
 			// Issue request to OpenStreetMap API to find bounding box by query
-			$.getJSON( OSM_API_BASE + encodeURIComponent( query ) )
+			$.getJSON( OSM_API_BASE + encodeURIComponent( query ) + '?format=json' )
 				.success( onSuccess )
 				.error( onError );
 		};
