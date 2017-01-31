@@ -20,7 +20,7 @@ if ( ! defined( 'MAP_BLOCK_VERSION' ) ) {
  * Enqueue admin editor block scripts and styles.
  */
 function map_block_enqueue_editor_scripts() {
-	wp_enqueue_script( 'map-block-editor', plugins_url( 'js/editor-block.js', __FILE__ ), array( 'wp-blocks', 'jquery', 'underscore' ), MAP_BLOCK_VERSION );
+	wp_enqueue_script( 'map-block-editor', plugins_url( 'js/editor-block.js', __FILE__ ), array( 'wp-blocks', 'wp-elements', 'jquery', 'underscore' ), MAP_BLOCK_VERSION );
 	wp_localize_script( 'map-block-editor', 'mapBlockL10n', array(
 		'title'       => __( 'Map', 'map-block' ),
 		'description' => __( 'Embed a map from OpenStreetMaps', 'map-block' ),

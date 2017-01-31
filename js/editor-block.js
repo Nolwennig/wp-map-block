@@ -1,5 +1,5 @@
-;( function( strings, blocks, $, _ ) {
-	var OSM_API_BASE, OSM_FRAME_BASE, el;
+;( function( strings, blocks, el, $, _ ) {
+	var OSM_API_BASE, OSM_FRAME_BASE;
 
 	/**
 	 * Base URL for OpenStreetMap query API.
@@ -16,18 +16,11 @@
 	OSM_FRAME_BASE = 'https://www.openstreetmap.org/export/embed.html';
 
 	/**
-	 * WordPress block element builder.
-	 *
-	 * @type {Function}
-	 */
-	el = blocks.element;
-
-	/**
 	 * Returns a map block form element.
 	 *
-	 * @param  {Object}          attributes Block attributes
-	 * @param  {Object}          block      Block form state helpers
-	 * @return {wp.blocks.Block}            Block form element
+	 * @param  {Object}    attributes Block attributes
+	 * @param  {Object}    block      Block form state helpers
+	 * @return {WPElement}            Block form element
 	 */
 	function MapBlockForm( attributes, block ) {
 		var onSubmit, className;
@@ -109,8 +102,8 @@
 	/**
 	 * Returns a map block display element.
 	 *
-	 * @param  {Object}          attributes Block attributes
-	 * @return {wp.blocks.Block}            Block form element
+	 * @param  {Object}    attributes Block attributes
+	 * @return {WPElement}            Block form element
 	 */
 	function MapBlockDisplay( attributes ) {
 		var isEmpty, className;
@@ -168,4 +161,4 @@
 		validateAttributes: validateAttributes,
 		encodeAttributes: encodeAttributes
 	} );
-} )( this.mapBlockL10n, this.wp.blocks, this.jQuery, this._ );
+} )( this.mapBlockL10n, this.wp.blocks, this.wp.element, this.jQuery, this._ );
