@@ -22,7 +22,7 @@
 	 * @param  {Object}    block      Block form state helpers
 	 * @return {WPElement}            Block form element
 	 */
-	function MapBlockForm( attributes, block ) {
+	function form( attributes, block ) {
 		var onSubmit, className;
 
 		onSubmit = function( event ) {
@@ -89,7 +89,7 @@
 			className: className,
 			onsubmit: onSubmit
 		}, [
-			MapBlockDisplay( attributes ),
+			display( attributes ),
 			el( 'input', {
 				type: 'text',
 				name: 'query',
@@ -105,7 +105,7 @@
 	 * @param  {Object}    attributes Block attributes
 	 * @return {WPElement}            Block form element
 	 */
-	function MapBlockDisplay( attributes ) {
+	function display( attributes ) {
 		var isEmpty, className;
 
 		isEmpty = ! attributes.bbox;
@@ -156,8 +156,8 @@
 	blocks.register( 'map-block/map', {
 		title: strings.title,
 		description: strings.description,
-		form: MapBlockForm,
-		display: MapBlockDisplay,
+		form: form,
+		display: display,
 		validateAttributes: validateAttributes,
 		encodeAttributes: encodeAttributes
 	} );
