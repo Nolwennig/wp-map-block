@@ -1,4 +1,4 @@
-;( function( strings, blocks, el, $, _ ) {
+( function( strings, blocks, el, $, _ ) {
 	var OSM_API_BASE, OSM_FRAME_BASE;
 
 	/**
@@ -60,7 +60,8 @@
 				var bbox;
 
 				if ( ! data.length ) {
-					return onError();
+					onError();
+					return;
 				}
 
 				// Transform boundingbox to expected query param value order
